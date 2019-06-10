@@ -39,7 +39,7 @@ p.then((message ) => {
   });*/
   
 
-// Promise
+
 var promise1 = new Promise(function(resolve, reject) {
     setTimeout(function() {
       resolve('foo');
@@ -48,7 +48,8 @@ var promise1 = new Promise(function(resolve, reject) {
   
   promise1.then(function(value) {
     console.log(value);
-    // expected output: "foo"
+  
   });
   
   console.log(promise1);
+  ==================
