@@ -40,7 +40,7 @@ p.then((message ) => {
   
 
 
-var promise1 = new Promise(function(resolve, reject) {
+/*var promise1 = new Promise(function(resolve, reject) {
     setTimeout(function() {
       resolve('foo');
     }, 300);
@@ -51,5 +51,16 @@ var promise1 = new Promise(function(resolve, reject) {
   
   });
   
-  console.log(promise1);
-  ==================
+  console.log(promise1);*/
+  function serverRequest(query, callback){
+    setTimeout(function(){
+      var response = query + "full!";
+      callback(response);
+    },5000);
+  }
+  
+  function getResults(results){
+    console.log("Response from the server: " + results);
+  }
+  
+  serverRequest("The glass is half ", getResults);
