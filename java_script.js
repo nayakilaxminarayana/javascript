@@ -52,7 +52,7 @@ p.then((message ) => {
   });
   
   console.log(promise1);*/
-  function serverRequest(query, callback){
+  /*function serverRequest(query, callback){
     setTimeout(function(){
       var response = query + "full!";
       callback(response);
@@ -63,4 +63,30 @@ p.then((message ) => {
     console.log("Response from the server: " + results);
   }
   
-  serverRequest("The glass is half ", getResults);
+  serverRequest("The glass is half ", getResults);*/
+  const weather = true
+const date    = new Promise(function(resolve, reject) {
+  if (weather) {
+    const dateDetails = {
+      name:     'Cubana Restaurant',
+      location: '55th Street',
+      table:    5
+    };
+
+    resolve(dateDetails)
+  } else {
+    reject(new Error('Bad weather, so no Date'))
+  }
+});
+const myDate = function() {
+  date
+    .then(function(done) {
+      console.log('We are going on a date!')
+      console.log(done)
+    })
+    .catch(function(error) {
+        console.log(error.message)
+    })
+}
+
+myDate();
